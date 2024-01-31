@@ -78,6 +78,7 @@ public class Administrative extends User {
                     break;
                 case 12:
                     getAdministratives();
+                    break;
                 default:
                     login = false;
                 }
@@ -135,6 +136,7 @@ public class Administrative extends User {
         teacher.setYearOfArrival();
         teacher.setEmailAddress();
         teacher.setUserName();
+        teacher.setMyclasses(this.classes);
         Integer ActualnumTeachers = teachers.size();
         ActualnumTeachers++;
         teacher.setPassword(teacher.getPhoneNum());

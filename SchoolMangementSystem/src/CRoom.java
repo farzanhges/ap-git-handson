@@ -1,9 +1,10 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Scanner;
-public class CRoom {
+public class CRoom implements Serializable {
     private String name;
     private String[][] schedule = new String[5][4];
-    private ArrayList<Student> students;
+    private ArrayList<Student> students = new ArrayList <Student> ();
     public void setSchedule(){
         System.out.println("set session:");
         Scanner input = new Scanner(System.in);

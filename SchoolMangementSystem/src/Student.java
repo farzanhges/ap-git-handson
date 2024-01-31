@@ -2,8 +2,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Student extends User{
-    private ArrayList <Float> grades; // grades represent specific students scores in exams and all
-    private ArrayList<String> subject;
+    private ArrayList <Float> grades = new ArrayList <Float>(); // grades represent specific students scores in exams and all
+    private ArrayList<String> subject = new ArrayList <String>();
     private String myClass;
     private String grade; // this grade reporesents the class our this student is in
     public void initialize(){
@@ -35,8 +35,7 @@ public class Student extends User{
         this.subject.add(input.nextLine());
         System.out.println("what is the grade you want to add?");
         this.grades.add((float) input.nextFloat());
-        input.close();
-
+        System.out.println();
     }
     public void setMyClass(){
         System.out.println("What's the name of the class you want to put this student in");

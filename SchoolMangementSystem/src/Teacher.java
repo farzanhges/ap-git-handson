@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class Teacher extends User {
     private String subject;
-    private ArrayList<CRoom> myClass;
+    private ArrayList<CRoom> myClass = new ArrayList<>();
     public void initialize(){
         boolean login = true;
         while(login == true) {
@@ -46,11 +46,11 @@ public class Teacher extends User {
     }
 
     public void printSchedule() {
-        System.out.printf("%-20s%-20s%-20s%-20s%-20s"," ","First Period","Second Period","Third Period","Forth Period");
+        System.out.printf("%-20s%-20s%-20s%-20s%-20s%n"," ","First Period","Second Period","Third Period","Forth Period");
         boolean helper = false;
         for (Integer k = 0; k < 5; k++) {
             String[] Days = {"Saturday", "Sunday", "Monday", "Tuesday", "Wednesday"};
-            System.out.printf("%-20s:", Days[k]);
+            System.out.printf("%-20s", Days[k]+":");
             for (Integer j = 0; j < 4; j++) {
                 for (Integer i = 0; i < myClass.size(); i++) {
                     String[][] schedule = myClass.get(i).getSchedule();
@@ -59,13 +59,30 @@ public class Teacher extends User {
                         helper = true;
                     }
                 }
-                if(helper == true){
+                if(helper != true){
                     System.out.printf("%-20s","clear");
                     helper = false;
                 }
             }
+            System.out.println();
         }
     }
 
+    public void setMyclasses(ArrayList<CRoom> classes) {
+        for(int i = 0; i < classes.size(); i++){
+            for(int j = 0; j < 5; j++){
+                for(int k = 0; k < 4; k++){
+                    if(classes.get(i).getSchedule()[j][k].equals(this.getName())){
+                        myClass.add(classes.get(i));
+                    }
+                    for(int t = 0; t < myClass.size()-1; t++){
+                        if(classes.get(i).equals(myClass.get(t))){
+                            myClass.removeLast();
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 

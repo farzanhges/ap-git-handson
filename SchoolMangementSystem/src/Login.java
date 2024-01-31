@@ -56,7 +56,21 @@ public class Login {
         Student s = searchStudents(userName, password);
         Teacher t = searchTeachers(userName, password);
         Administrative ad = searchAdmins(userName, password);
-        File classPath = new File("D:\\University\\Advanced programming\\SchoolManagementSystem\\ClassRooms");
+        File classPath = new File("D:\\University\\Advanced programming\\SchoolMangementSystem\\ClassRooms");
+        File[] classList = classPath.listFiles();
+        if(classList != null){
+            for(int i = 0; i < classList.length; i++){
+                try{
+                    FileInputStream path = new FileInputStream(classList[i]);
+                    ObjectInputStream in = new ObjectInputStream(path);
+                    classes.add((CRoom) in.readObject());
+                    in.close();
+                    path.close();
+                }catch(IOException | ClassNotFoundException e){
+                    e.printStackTrace();
+                }
+            }
+        }
         if(s != null){
             s.initialize();
         }else if(t!=null){
