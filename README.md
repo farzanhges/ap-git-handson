@@ -1,8 +1,8 @@
-##Abstract
+#Abstract
 
 The fundamental problem that we tried to tackle in this code was how to implement an application for schools with object oritened programming.
 
-##UserStory
+#UserStory
 
 The first thing that we thought about was every user has what needs and how much accessibility should this user have and this led us to writing a user story that is written in the below section.
 As an admin(school’s management) , I want be able to add or remove students, teachers, and other employees and include their personal information, so that when need raises we’ll be able to add/remove users to/from the system, and in addition use their personal information in an emergency.
@@ -14,7 +14,7 @@ As a manager, I want to be able to make classes, so that the teachers and studen
 The system should ensure the security and privacy of student and staff’s information, so that only relevant authority can access this information.
 The system should have a log in page, so that everyone has access to the methods and attributes that are necessary to them.
 
-##Class Diagram
+#Class Diagram
 
 
 ![phase2](https://github.com/farzanhges/ap-git-handson/assets/149306653/77585b3b-eac1-464a-b470-d98955dea78c)
@@ -35,7 +35,7 @@ The system should have a log in page, so that everyone has access to the methods
 
 
 
-#3Sequence Diagram
+#Sequence Diagram
 
 
 <img width="896" alt="image" src="https://github.com/farzanhges/ap-git-handson/assets/149306653/27165871-6093-4350-a9e9-30da6d3f5431">
